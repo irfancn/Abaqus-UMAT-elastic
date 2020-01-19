@@ -1,22 +1,21 @@
-C ======================================================================
-C User Subroutine UMAT for Abaqus linear elastic material
-C By Irfan Habeeb CN (Technion - IIT)
-C ======================================================================
-      SUBROUTINE UMAT(STRESS,STATEV,DDSDDE,SSE,SPD,SCD,
-     1 RPL,DDSDDT,DRPLDE,DRPLDT,
-     2 STRAN,DSTRAN,TIME,DTIME,TEMP,DTEMP,PREDEF,DPRED,CMNAME,
-     3 NDI,NSHR,NTENS,NSTATV,PROPS,NPROPS,COORDS,DROT,PNEWDT,
-     4 CELENT,DFGRD0,DFGRD1,NOEL,NPT,LAYER,KSPT,KSTEP,KINC)
+c ======================================================================
+c User Subroutine UMAT for Abaqus linear elastic material
+c By Irfan Habeeb CN (PhD, Technion - IIT)
+c ======================================================================
+      subroutine umat(stress,statev,ddsdde,sse,spd,scd,
+     1 rpl,ddsddt,drplde,drpldt,
+     2 stran,dstran,time,dtime,temp,dtemp,predef,dpred,cmname,
+     3 ndi,nshr,ntens,nstatv,props,nprops,coords,drot,pnewdt,
+     4 celent,dfgrd0,dfgrd1,noel,npt,layer,kspt,kstep,kinc)
 C
-      INCLUDE 'ABA_PARAM.INC'
+      include 'aba_param.inc'
 C
-      CHARACTER*80 CMNAME
-      DIMENSION STRESS(NTENS),STATEV(NSTATV),
-     1 DDSDDE(NTENS,NTENS),
-     2 DDSDDT(NTENS),DRPLDE(NTENS),
-     3 STRAN(NTENS),DSTRAN(NTENS),TIME(2),PREDEF(1),DPRED(1),
-     4 PROPS(NPROPS),COORDS(3),DROT(3,3),DFGRD0(3,3),DFGRD1(3,3)
-C
+      character*80 cmname
+      dimension stress(ntens),statev(nstatv),
+     1 ddsdde(ntens,ntens),
+     2 ddsddt(ntens),drplde(ntens),
+     3 stran(ntens),dstran(ntens),time(2),predef(1),dpred(1),
+     4 props(nprops),coords(3),drot(3,3),dfgrd0(3,3),dfgrd1(3,3)
 C
       integer i, j
       real Y, n, lambda, mu
