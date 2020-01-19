@@ -1,6 +1,6 @@
 C ======================================================================
 C User Subroutine UMAT for Abaqus linear elastic material
-C By Irfan Habeeb CN (PhD, Technion - IIT)
+C By Irfan Habeeb CN (Technion - IIT)
 C ======================================================================
       SUBROUTINE UMAT(STRESS,STATEV,DDSDDE,SSE,SPD,SCD,
      1 RPL,DDSDDT,DRPLDE,DRPLDT,
